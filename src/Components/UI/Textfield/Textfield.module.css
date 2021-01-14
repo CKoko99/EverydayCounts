@@ -1,0 +1,9 @@
+.Textfield{
+    background-color: #FFEED6;
+    border: 0px;
+    margin: 15px auto auto;
+    padding: 1.5% 10% 1.5% 2%;
+    font-size: 1.3em;
+    min-width: 250px;
+    box-shadow: 2px 2px rgb(165, 165, 165);
+}

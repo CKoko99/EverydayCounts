@@ -1,0 +1,11 @@
+.Roundbutton{
+    padding: 15px 10%;
+    background-color: #FBBFCA;
+    border-radius: 25px;
+    text-decoration: underline;
+    font-family: inherit;
+    font-size: 1.5em;
+}
+.Roundbutton:hover{
+    border: solid 3.5px;
+}

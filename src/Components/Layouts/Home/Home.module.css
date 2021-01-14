@@ -1,0 +1,12 @@
+.Icons {
+  margin-top: 8%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.Maintext{
+    text-align: center;
+}

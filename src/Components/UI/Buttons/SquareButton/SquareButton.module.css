@@ -1,0 +1,13 @@
+.Squarebutton{
+    font-family: inherit;
+  min-width: 250px;
+  padding: 1.5% 2%;
+  margin: 2% auto auto;
+  width: 40%;
+  max-width: 375px;
+  font-size: 1.3em;
+
+}
+.Squarebutton:hover{
+    border: solid 3.5px;
+}

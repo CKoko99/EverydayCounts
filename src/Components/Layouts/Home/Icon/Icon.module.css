@@ -1,0 +1,25 @@
+.Icon{
+    flex-basis: 1.5em;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+    margin: auto calc(2px + 1%); 
+}
+.Icon img{
+    width: 100px;
+    height: 100px;
+    padding: 5em 5em;
+    border-radius: 40px;
+}
+img:hover {
+    border: black 3px solid;
+}
+
+@media (min-width: 600px){
+    p{
+    color: white;
+}
+.Icon:hover > p {
+    color: black;
+}
+}
