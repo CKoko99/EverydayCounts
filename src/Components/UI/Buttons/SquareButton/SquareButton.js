@@ -5,6 +5,7 @@ const squarebutton = props =>{
     return(
         <button className={classes.Squarebutton}
             style={{backgroundColor: props.color}}
+            onClick={props.clicked}
         >{props.children}</button>
     )
 }

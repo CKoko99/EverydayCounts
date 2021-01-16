@@ -43,7 +43,7 @@ const home = (props) => {
         {items.map((item) => {
           return (
             <Icon
-                key={item.text}
+              key={item.text}
               pic={item.pic}
               text={item.text}
               color={item.color}
