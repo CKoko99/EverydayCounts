@@ -36,7 +36,7 @@ const home = (props) => {
     <div>
       <div className={classes.Maintext}>
         <h3>Welcome User</h3>
-        <h4>January 12th, 2020</h4>
+        <h4>January 14th, 2020</h4>
         <h4>Day 1</h4>
       </div>
       <div className={classes.Icons}>
