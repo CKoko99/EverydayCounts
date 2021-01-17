@@ -16,22 +16,26 @@ const items = [
     pic: tomato,
     text: "Using the pomodoro technique track your focus sessions",
     color: "#FFEED6",
-    link: "/plan",
+    link: "/pomo",
   },
   {
     pic: bed,
     text: "End your day",
     color: "#A663CC",
-    link: "/plan",
+    link: "/checkup",
   },
   {
     pic: stats,
     text: "See how you’re doing",
     color: "#FBBFCA",
-    link: "/plan",
+    link: "/stats",
   },
 ];
+
 const home = (props) => {
+  const changepagehandler = (page) => {
+    props.history.push(page);
+  };
   return (
     <div>
       <div className={classes.Maintext}>
@@ -48,6 +52,7 @@ const home = (props) => {
               text={item.text}
               color={item.color}
               link={item.link}
+              clicked={() => changepagehandler(item.link)}
             />
           );
         })}

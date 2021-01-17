@@ -1,0 +1,10 @@
+.Task{
+    width: 80%;
+    background-color: rgb(174, 228, 255);
+    padding: 1.5%;
+    font-size: 1.5em;
+    margin: 20px auto 20px;
+}
+.Taskitem{
+    text-align: center;
+}

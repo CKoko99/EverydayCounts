@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./Icon.module.css";
 const icon = (props) => (
-  <div className={classes.Icon}>
+  <div className={classes.Icon}
+    onClick={props.clicked}
+  >
     <Link to={props.link}>
       <img alt="" style={{ backgroundColor: props.color }} src={props.pic}></img>
     </Link>
