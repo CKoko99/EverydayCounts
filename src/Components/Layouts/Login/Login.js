@@ -1,68 +1,66 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import banner from "../../../Images/Banner.png";
 import classes from "../Layout.module.css";
 import SquareButton from "../../UI/Buttons/SquareButton/SquareButton";
 import Textfield from "../../UI/Textfield/Textfield";
-import { Link } from "react-router-dom";
-import axios from "../../../axiosinstance";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../../store";
+import {auth} from '../../../index'
 
-class login extends Component {
-  state = {
-    user: "",
-    password: "",
-    Loginiswrong: false,
-  };
-  usernameHandler = (event) => {
-    this.setState({ user: event.target.value });
-  };
-  passwordHandler = (event) => {
-    this.setState({ password: event.target.value });
-  };
 
-  loginhandler = () => {
-    axios.get("/users.json").then((res) => {
-      const responses = { ...res.data };
-      for (let response in responses) {
-        const theresponse = responses[response];
-        if (
-          theresponse.username === this.state.user &&
-          theresponse.password === this.state.password
-        ) {
-          this.props.history.push('/Home')
-        }
-        else{
-          this.setState({ Loginiswrong: true });
-        }
-      }
-    });
-  };
-
-  render() {
-    let wrongLoginText = null
-    if(this.state.Loginiswrong === true){
-      wrongLoginText = <p style={{color: "red"}}>Your Username or Password is incorrect</p>
-    }
-    return (
-      <div className={classes.Layout}>
-        <img alt="banner" className={classes.Banner} src={banner}></img>
-        <h3 className={classes.Maintext}>Login</h3>
-        <div className={classes.Textfields}>
-          <Textfield changed={this.usernameHandler}>Username: </Textfield>
-          <Textfield changed={this.passwordHandler}>Password: </Textfield>
-          {wrongLoginText}
-        </div>
-        <div className={classes.Buttons}>
-          <Link to="/Signup">
-            <SquareButton color={"#DAA2FA"}>New User? Sign Up!</SquareButton>
-          </Link>
-
-            <SquareButton 
-            clicked={this.loginhandler}
-            color={"#FBBFCA"}>Sign In!</SquareButton>
-
-        </div>
-      </div>
-    );
+function Login() {
+  const [emailInput, setEmailInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
+  const [loginErrorText, setLoginErrorText] = useState("");
+  const authDispatch = useDispatch(authActions)
+  const history = useHistory()
+  function emailInputHandler(event) {
+    setEmailInput(event.target.value);
   }
+  function passwordInputHandler(event) {
+    setPasswordInput(event.target.value);
+  }
+  function loginHandler() {
+    auth.signInWithEmailAndPassword(emailInput, passwordInput)
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        authDispatch(authActions.login({token: data.idToken, userID: data.localId}))
+        history.replace('/home')
+      })
+      .catch((err) => {
+        let errorMessage = "Authentication failed incorrect Username and Password";
+        setLoginErrorText(errorMessage)
+        //alert(err.message);
+      });
+  }
+  return (
+    <div className={classes.Layout}>
+      <img alt="banner" className={classes.Banner} src={banner}></img>
+      <h3 className={classes.Maintext}>Login</h3>
+      <div className={classes.Textfields}>
+        <Textfield value={emailInput} changed={emailInputHandler}>
+          Email:
+        </Textfield>
+        <Textfield value={passwordInput} changed={passwordInputHandler}>
+          Password:
+        </Textfield>
+        <p style={{ color: "red" }}>{loginErrorText}</p>
+      </div>
+      <div className={classes.Buttons}>
+        <Link to="/Signup">
+          <SquareButton color={"#DAA2FA"}>New User? Sign Up!</SquareButton>
+        </Link>
+
+        <SquareButton clicked={loginHandler} color={"#FBBFCA"}>
+          Sign In!
+        </SquareButton>
+      </div>
+    </div>
+  );
 }
-export default login;
+export default Login;

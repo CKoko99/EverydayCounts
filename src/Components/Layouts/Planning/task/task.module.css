@@ -4,7 +4,29 @@
     padding: 1.5%;
     font-size: 1.5em;
     margin: 20px auto 20px;
+    box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
+
 }
 .Taskitem{
     text-align: center;
+    width: 100%;
 }
+h1{
+    font-weight: bold;
+}
+
+.actionItem{
+    width: 35px;
+    margin: auto 5px;
+}
+.actionItems{
+    display: flex;
+    justify-content: space-around;
+}
+@media screen and (min-width: 800px) {
+    .wholeTask{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+  }

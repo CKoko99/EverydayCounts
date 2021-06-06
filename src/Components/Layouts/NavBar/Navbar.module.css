@@ -1,0 +1,21 @@
+.Navbar img{
+    width: 40px;
+}
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.navtext{
+    display: flex;
+    padding: auto 10px;
+    margin: auto 10px;
+}
+.navtext a{
+    margin: auto 10px;
+    text-decoration: none;
+}
+.Navbar h4{
+    color: black;
+}

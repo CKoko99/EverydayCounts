@@ -7,8 +7,11 @@ const addtask = props =>{
             textAlign: 'center',
             fontSize: "1.5em",
             fontFamily: "inherit",
-            padding: "1.5%"
-        }}></input>)
+            padding: "1.5%",
+            border: '0',
+            borderBottom: '1px'
+        }}
+        ref={props.ref}/>)
 }
 
 export default addtask

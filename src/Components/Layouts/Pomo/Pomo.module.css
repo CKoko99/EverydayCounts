@@ -1,0 +1,76 @@
+.Pomo {
+  text-align: center;
+}
+.Content {
+  background-color: #ffeed6;
+  padding-top: 6%;
+  height: 100%;
+  min-height: 500px;
+  width: 99%;
+  border-radius: 20px;
+  border: 2px solid black;
+  margin: auto;
+}
+.Pomo .MainImg {
+  width: 75%;
+}
+.TrackerControls {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  align-items: center;
+}
+.TrackerButton {
+  margin: -2px 20px;
+  font-size: 2.5em;
+}
+.TrackerNum {
+  border-bottom: 1px solid #000;
+}
+.tomato {
+  width: 60px;
+  margin: auto 12px;
+}
+button {
+  background-color: #aee4fe;
+  padding: 5% 8%;
+  font-size: 1.5em;
+  font-family: inherit;
+  border-radius: 30px;
+  text-decoration: underline;
+}
+.home {
+  width: 35px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.welcomeText{
+  font-size: 1.8em;
+}
+.subSection{
+  width: 100%;
+}
+.desktop-flip{
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 800px) {
+  .Content{
+    width: 90%;
+  }
+  .section{
+    display: flex;
+    align-items: flex-start;
+  }
+  .desktop-flip{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .pomoButton{
+    width: 80%;
+  }
+}

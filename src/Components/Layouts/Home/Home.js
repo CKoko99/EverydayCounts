@@ -5,6 +5,8 @@ import task from "../../../Images/Icons/completed-task.svg";
 import tomato from "../../../Images/Icons/tomato.svg";
 import bed from "../../../Images/Icons/bed.svg";
 import stats from "../../../Images/Icons/profits.svg";
+import { useSelector } from "react-redux";
+import { auth } from "../../../index";
 const items = [
   {
     pic: task,
@@ -14,7 +16,7 @@ const items = [
   },
   {
     pic: tomato,
-    text: "Using the pomodoro technique track your focus sessions",
+    text: "Pomodoro Tracker",
     color: "#FFEED6",
     link: "/pomo",
   },
@@ -32,16 +34,20 @@ const items = [
   },
 ];
 
-const home = (props) => {
-  const changepagehandler = (page) => {
-    props.history.push(page);
-  };
+function Home (props) {
+  const username = auth.currentUser.displayName
+  const planningSelector = useSelector(state => state.planning)
+  const currentDate = new Date();
+  var options = { month: 'long'};
+  const month = new Intl.DateTimeFormat('en-US', options).format(currentDate)
+  const day = currentDate.getDate()
+  const year = currentDate.getFullYear()
   return (
     <div>
       <div className={classes.Maintext}>
-        <h3>Welcome User</h3>
-        <h4>January 14th, 2020</h4>
-        <h4>Day 1</h4>
+        <h3>Welcome {username}</h3>
+        <h4>{month} {day}, {year} </h4>
+        <h4>Day {planningSelector.day}</h4>
       </div>
       <div className={classes.Icons}>
         {items.map((item) => {
@@ -52,7 +58,6 @@ const home = (props) => {
               text={item.text}
               color={item.color}
               link={item.link}
-              clicked={() => changepagehandler(item.link)}
             />
           );
         })}
@@ -60,4 +65,4 @@ const home = (props) => {
     </div>
   );
 };
-export default home;
+export default Home;

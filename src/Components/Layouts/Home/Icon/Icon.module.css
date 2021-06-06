@@ -11,15 +11,15 @@
     padding: 5em 5em;
     border-radius: 40px;
 }
-img:hover {
+.Icon img:hover {
     border: black 3px solid;
 }
 
-@media (min-width: 600px){
-    p{
+/*@media (min-width: 800px){
+    .Icon p{
     color: white;
 }
 .Icon:hover > p {
     color: black;
 }
-}
+}*/

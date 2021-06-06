@@ -1,9 +1,62 @@
-.Planning{
-    text-align: center;
+.Planning {
+  text-align: center;
 }
-.Content{
-    background-color: #23F0C7;
-    padding-top: 6%;
-    height: 100%;
-    min-height: 900px;
+.Content {
+  background-color: #23F0C7;
+  padding-top: 6%;
+  height: 100%;
+  min-height: 500px;
+  width: 99%;
+  border-radius: 20px;
+  border: 2px solid black;
+  margin: auto;
+}
+.addtask {
+  background-color: #AEE4FF;
+  width: 80%;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: inherit;
+  padding: 1.5%;
+  border: 0;
+  border-bottom: 1px solid black;
+  box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
+}
+.welcomeText {
+  font-size: 2em;
+  margin: auto 20px 30px 20px;
+}
+.instruction {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+.instruction img{
+  align-self: center;
+  margin-right: 20px;
+}
+.instructions{
+  padding: 0px;
+}
+.home{
+  width: 35px;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.subsection{
+  width: 100%;
+}
+.submitButton{
+  background-color: #FBBFCA;
+}
+@media screen and (min-width: 800px) {
+  .Content{
+    width: 90%;
+  }
+  .section{
+    display: flex;
+  }
 }
